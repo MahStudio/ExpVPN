@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpVPN.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,6 +29,9 @@ namespace ExpVPN
         /// </summary>
         public App()
         {
+            //DI
+            DependencyRegister.BuildContainer();
+
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
