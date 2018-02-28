@@ -25,11 +25,17 @@ namespace ExpVPN
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private readonly IVPNInformationService vpnService;
+        private readonly IVPNInformationService vpnInfoService;
         public MainPage()
         {
-            vpnService = DependencyRegister.Dependencies.Resolve<IVPNInformationService>();
+            vpnInfoService = DependencyRegister.Dependencies.Resolve<IVPNInformationService>();
             this.InitializeComponent();
+            DoStuff();
+        }
+
+        private void DoStuff()
+        {
+            var a = vpnInfoService.Get();
         }
     }
 }
