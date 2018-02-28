@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Autofac;
+using ExpVPN.Services.ConnectVPN;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,9 +27,11 @@ namespace ExpVPN
     public sealed partial class MainPage : Page
     {
         private readonly IVPNInformationService vpnInfoService;
+        private readonly IConnectVPNService vpnConnect;
         public MainPage()
         {
             vpnInfoService = DependencyRegister.Dependencies.Resolve<IVPNInformationService>();
+            vpnConnect = DependencyRegister.Dependencies.Resolve<IConnectVPNService>();
             this.InitializeComponent();
             DoStuff();
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using ExpVPN.Services.ConnectVPN;
 using ExpVPN.Services.VPNInformation;
 
 namespace ExpVPN.Infrastructure
@@ -15,6 +16,7 @@ namespace ExpVPN.Infrastructure
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<VPNInformationService>().As<IVPNInformationService>();
+            builder.RegisterType<ConnectVPNService>().As<IConnectVPNService>();
             Dependencies = builder.Build();
         }
     }
