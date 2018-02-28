@@ -1,0 +1,11 @@
+language: csharp
+solution: ExpVPN/ExpVPN.sln
+before_install:
+  - mkdir -p .nuget
+  - wget -O .nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+  - mono .nuget/nuget.exe # Output NuGet's version number
+install:
+  - sudo apt-get install -y gtk-sharp2
+  - mono .nuget/nuget.exe restore ExpVPN/ExpVPN.sln
+mono:
+  - latest
