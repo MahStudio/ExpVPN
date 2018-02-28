@@ -9,7 +9,7 @@ namespace ExpVPN.Services.ConnectVPN
 {
     public interface IConnectVPNService
     {
-        void Connect(VPNConnection conn);
-        void Disconnect();
+        Task Connect(VPNConnection conn);
+        Task Disconnect();
     }
 }

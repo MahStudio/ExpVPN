@@ -38,7 +38,17 @@ namespace ExpVPN
 
         private void DoStuff()
         {
-            var a = vpnInfoService.Get();
+            
+        }
+
+        private async void Button_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            await vpnConnect.Connect(vpnInfoService.Get());
+        }
+
+        private async void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            await vpnConnect.Disconnect();
         }
     }
 }
