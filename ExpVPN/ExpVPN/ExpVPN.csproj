@@ -107,6 +107,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConnectVPN\ConnectVPNService.cs" />
     <Compile Include="Services\ConnectVPN\IConnectVPNService.cs" />
+    <Compile Include="Services\VPNInformation\FakeInfoService.cs" />
     <Compile Include="Services\VPNInformation\IVPNInformationService.cs" />
     <Compile Include="Services\VPNInformation\VPNInformationService.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

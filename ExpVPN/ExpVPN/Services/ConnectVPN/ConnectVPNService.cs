@@ -18,14 +18,14 @@ namespace ExpVPN.Services.ConnectVPN
 
             VpnNativeProfile profile = new VpnNativeProfile()
             {
-                AlwaysOn = false,
+                AlwaysOn = true,
                 NativeProtocolType = VpnNativeProtocolType.Pptp,
                 ProfileName = conn.ConnectionName,
                 RememberCredentials = true,
-                RequireVpnClientAppUI = true,
-                RoutingPolicyType = VpnRoutingPolicyType.SplitRouting,
+                RequireVpnClientAppUI = false,
+                RoutingPolicyType = VpnRoutingPolicyType.ForceAllTrafficOverVpn,
                 TunnelAuthenticationMethod = VpnAuthenticationMethod.PresharedKey,
-                UserAuthenticationMethod = VpnAuthenticationMethod.PresharedKey,
+                UserAuthenticationMethod = VpnAuthenticationMethod.PresharedKey
             };
 
             profile.Servers.Add(conn.ServerName);

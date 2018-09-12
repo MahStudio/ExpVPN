@@ -30,7 +30,7 @@ namespace ExpVPN
         private readonly IConnectVPNService vpnConnect;
         public MainPage()
         {
-            vpnInfoService = DependencyRegister.Dependencies.Resolve<IVPNInformationService>();
+            vpnInfoService = new FakeInfoService();
             vpnConnect = DependencyRegister.Dependencies.Resolve<IConnectVPNService>();
             this.InitializeComponent();
             DoStuff();
@@ -38,7 +38,7 @@ namespace ExpVPN
 
         private void DoStuff()
         {
-            
+
         }
 
         private async void Button_ClickAsync(object sender, RoutedEventArgs e)
